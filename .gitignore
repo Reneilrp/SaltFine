@@ -1,12 +1,53 @@
+# Dependencies & builds
 node_modules
 dist
 dist-ssr
-*.local
-.env
-.DS_Store
+*/node_modules
+*/dist
 
-# Thesis working files (not part of the app)
+# Environment variables & local secrets
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+!*/.env.example
+*.local
+
+# Documents & binary artifacts
+*.docx
+*.doc
+*.pdf
+generate_docs.py
+
+# OS & log files
+.DS_Store
+*.log
+*.bak
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# User uploads & heavy training images
+uploads/*
+!uploads/.gitkeep
+backend/uploads/*
+!backend/uploads/.gitkeep
+dataset/train/*/*.jpg
+dataset/train/*/*.jpeg
+dataset/train/*/*.png
+dataset/val/*/*.jpg
+dataset/val/*/*.jpeg
+dataset/val/*/*.png
+
+# Machine Learning models (large binary weights)
+ml_service/models/*.onnx
+ml_service/models/*.pt
+ml_service/models/*.pth
 docwork/
 docwork2/
 figures/
-*.bak
